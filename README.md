@@ -63,24 +63,24 @@ functions.cloudEvent('toBQ', cloudEvent => {
 ## Dynamic Dataset and Table
 
 ```js
-    /*
-    {   
-        "dataset": "datasetname",
-        "table": "tablename",
-        "project": "projectname",
-        "content": {...}
-    }
-    */
-    const data = message
-    ? Buffer.from(message, 'base64').toString()
-    : '{}';
-    let payload = JSON.parse(data)
-    let {dataset, table, content} = payload;  
+/*
+{   
+    "dataset": "datasetname",
+    "table": "tablename",
+    "project": "projectname",
+    "content": {...}
+}
+*/
+const data = message
+? Buffer.from(message, 'base64').toString()
+: '{}';
+let payload = JSON.parse(data)
+let {dataset, table, content} = payload;  
 
-    bq.insert(
-        content,
-        process.env.PROJECT_ID, //or payload.project
-        dataset,
-        table
-    );
+bq.insert(
+    content,
+    process.env.PROJECT_ID, //or payload.project
+    dataset,
+    table
+);
 ```
