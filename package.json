@@ -1,0 +1,15 @@
+{
+  "name": "json_to_bigquery",
+  "version": "1.0.0",
+  "description": "@felivelasquez",
+  "main": "bq.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/bigquery": "^6.0.3",
+    "lodash": "^4.17.21"
+  }
+}
